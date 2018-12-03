@@ -19,7 +19,7 @@ def exchange (currency_from,currency_to,amount_from):
     """amount of currency received in the given exchange."""
 
     url_inf = "http://cs1110.cs.cornell.edu/2016fa/a1server.php?"
-    url_inf += "from=" + currency_from + "&to=" + currency_to +     "&amt="+ str(amount_from)
+    url_inf += "from=" + currency_from + "&to=" + currency_to + "&amt="+ str(amount_from)
     
     doc=urlopen(url_inf)
     docstr = doc.read()
