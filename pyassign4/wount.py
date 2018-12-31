@@ -25,14 +25,15 @@ def wcount(lines, topn=10):
     wordlist = []
     
     for word in lines.split():
+        word = word.strip(""",./;'[]`-=~!@#$%^&*"()_+{}?><'""").lower()
+        #删去字符 并将大写字母转化为小写
         if word.isalpha():
             words[word] = words.get(word,0) + 1 
     toplist=sorted(words.items(),key=lambda item:item[1],reverse=True)
     if topn > len(words.keys()): # 如果输入的topn大于单词数，则返回所有单词
         topn = len(words.keys())
     for z in toplist[:topn]:
-        print ((z[0]+':').ljust(15) + str(z[1]))
-    return '以上是出现频率最高的'+ str(topn) +'个数'
+        print ((z[0]+':').ljust(15) +"\t"+ str(z[1]))
 
 if __name__ == '__main__':
     if  len(sys.argv) == 1:      
