@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 #!/usr/bin/env python3
 
 """wcount.py: count words from an Internet file.
@@ -26,7 +20,7 @@ def wcount(lines, topn=10):
     
     for word in lines.split():
         word = word.strip(""",./;'[]`-=~!@#$%^&*"()_+{}?><'""").lower()
-        #删去字符 并将大写字母转化为小写
+        #删去标点符号 并将大写字母转化为小写
         if word.isalpha():
             words[word] = words.get(word,0) + 1 
     toplist=sorted(words.items(),key=lambda item:item[1],reverse=True)
